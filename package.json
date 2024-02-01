@@ -1,0 +1,25 @@
+{
+  "name": "servidor-cardapio-food",
+  "version": "1.0.0",
+  "description": "Provê dados para a aplicação cardápio food",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "servidor-cardapio-food"
+  },
+  "author": "tailanpatrick",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}
