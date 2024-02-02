@@ -37,7 +37,7 @@ routeOrder.get("/pedidos", function(req, res) {
     db.all(`SELECT 
     id_pedido, 
     total, 
-    substr(dt_pedido, 9, 2) || '/' || substr(dt_pedido, 6, 2) || '/' || substr(dt_pedido, 1, 4) as dt_pedido_formatada 
+    substr(dt_pedido, 9, 2) || '/' || substr(dt_pedido, 6, 2) || '/' || substr(dt_pedido, 1, 4) as dt_pedido 
 FROM 
     pedido 
 ORDER BY 
