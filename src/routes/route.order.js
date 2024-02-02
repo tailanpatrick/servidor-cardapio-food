@@ -34,14 +34,7 @@ routeOrder.post("/pedidos", function (req, res) {
 });
 
 routeOrder.get("/pedidos", function(req, res) {
-    db.all(`SELECT 
-    id_pedido, 
-    total, 
-    substr(dt_pedido, 9, 2) || '/' || substr(dt_pedido, 6, 2) || '/' || substr(dt_pedido, 1, 4) as dt_pedido 
-FROM 
-    pedido 
-ORDER BY 
-    substr(dt_pedido, 7, 4) || '-' || substr(dt_pedido, 4, 2) || '-' || substr(dt_pedido, 1, 2) DESC;`, [], function (err, rows){ 
+    db.all(`SELECT id_pedido, total, strftime('%d/%m/%Y', dt_pedido) as dt_pedido FROM pedido ORDER BY id_pedido DESC`, [], function (err, rows){ 
         return err ? 
         res.status(500).send("Ocorreu um erro: "+ err.message)
         : res.status(200).json(rows);
